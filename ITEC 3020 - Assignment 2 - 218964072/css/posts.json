@@ -1,0 +1,23 @@
+[
+  {
+    "id": "part-one-theme",
+    "title": "Part 1 — A Simple, Honest Light/Dark Theme",
+    "date": "2025-10-11",
+    "tags": ["javascript", "theme", "accessibility"],
+    "bodyHtml": "<p>The entire site switches theme by toggling <code>data-theme</code> on the <code>&lt;html&gt;</code> element. Colours are defined with CSS variables, so every component updates at once. A short script stores your choice in <code>localStorage</code> and, when there’s no choice, respects the operating system’s preference. The button reflects reality—its label and <code>aria-pressed</code> update as the theme changes.</p><p>An early inline snippet prevents a flash of the wrong theme while the page is loading. It’s only a few lines and it makes a real difference.</p>"
+  },
+  {
+    "id": "part-two-blog",
+    "title": "Part 2 — Rendering the Blog with the Fetch API",
+    "date": "2026-07-09",
+    "tags": ["fetch", "json", "dom"],
+    "bodyHtml": "<p>Posts live in a small JSON file. The blog fetches that file, sorts entries from newest to oldest, and maps each one to a clean card with a title, date, tags, and body. If the network misbehaves, the script shows a clear message instead of failing quietly. While the request is in flight, a lightweight skeleton holds the layout steady.</p><p>No libraries are involved; the code is short enough to read at a glance.</p>"
+  },
+  {
+    "id": "fragments",
+    "title": "Fragments — One Header and One Footer for the Whole Site",
+    "date": "2029-11-24",
+    "tags": ["fragments", "dry"],
+    "bodyHtml": "<p>The header and footer are loaded into placeholders with <code>fetch()</code>. This keeps navigation consistent and ensures the theme button appears on every page. The footer year is set at runtime, so it stays current without edits.</p><p>Small touches—a skip link, focus rings, and <code>aria-current</code> on the active link—make the pages more comfortable to navigate.</p>"
+  }
+]

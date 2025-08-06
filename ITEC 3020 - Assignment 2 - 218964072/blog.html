@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="Michael Karimov" />
+    <title>Blog — Michael Karimov</title>
+    <meta name="description" content="Posts loaded with fetch() from JSON, with straightforward filters and thoughtful defaults." />
+
+    <!-- Match system theme early, before styles -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (_) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="css/scripts.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <div id="site-header" data-fragment="css/header.html"></div>
+
+    <main id="main" class="container" tabindex="-1">
+      <h1 class="page-title">Blog</h1>
+      <noscript><p><strong>Note:</strong> Please enable JavaScript to load posts.</p></noscript>
+
+      <!-- Tag chips appear here when posts load -->
+      <div id="blog-controls" class="blog-controls" aria-label="Filter posts"></div>
+
+      <!-- Posts list -->
+      <div id="blog-list" class="blog-list" aria-live="polite"></div>
+
+      <!-- Error/status -->
+      <div id="blog-error" class="visually-hidden" role="status"></div>
+    </main>
+
+    <div id="site-footer" data-fragment="css/footer.html"></div>
+  </body>
+</html>

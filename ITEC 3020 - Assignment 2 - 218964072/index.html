@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="Michael Karimov" />
+    <meta name="theme-color" content="#0a66ff" />
+    <title>Michael Karimov — Portfolio</title>
+    <meta name="description" content="A compact portfolio demonstrating a site-wide light/dark theme and a blog rendered from JSON using the Fetch API." />
+
+    <!-- Prevent a flash of the wrong theme before CSS loads -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (_) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="css/scripts.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- Header injected via fetch() -->
+    <div id="site-header" data-fragment="css/header.html"></div>
+
+    <main id="main" class="container" tabindex="-1">
+      <h1 class="page-title">Welcome</h1>
+      <p class="lede">
+        This portfolio shows a site-wide light/dark theme and a blog rendered
+        from a JSON file using the Fetch API. The code is small, readable, and free of libraries.
+      </p>
+      <p><a class="btn btn-primary" href="blog.html">Open the blog</a></p>
+    </main>
+
+    <!-- Footer injected via fetch() -->
+    <div id="site-footer" data-fragment="css/footer.html"></div>
+  </body>
+</html>
